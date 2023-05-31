@@ -31,6 +31,7 @@ public class Main {
                 System.out.println("Digite 0 para terminar ou 1 para registrar nova compra.");
                 stop = scanner.nextInt();
             }else {
+                System.out.println("Saldo insuficiente");
 
             }
 
