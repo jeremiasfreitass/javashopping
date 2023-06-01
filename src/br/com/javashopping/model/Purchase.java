@@ -1,6 +1,6 @@
 package br.com.javashopping.model;
 
-public class Purchase {
+public class Purchase implements Comparable<Purchase>{
     private double value;
     private String description;
 
@@ -13,17 +13,12 @@ public class Purchase {
         return value;
     }
 
-    public void setValue(double value) {
-        this.value = value;
-    }
-
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public int compareTo(Purchase purchase) {
+        return Double.valueOf(this.value).compareTo(Double.valueOf(purchase.value));
     }
-
-
 }

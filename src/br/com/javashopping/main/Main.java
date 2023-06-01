@@ -2,6 +2,7 @@ package br.com.javashopping.main;
 import br.com.javashopping.model.CreditCard;
 import br.com.javashopping.model.Purchase;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -32,10 +33,21 @@ public class Main {
                 stop = scanner.nextInt();
             }else {
                 System.out.println("Saldo insuficiente");
-
+                stop = 0;
+                //System.out.println(creditCard.getLimit());
             }
-
         }
+
+        System.out.println("***********************");
+        System.out.println("COMPRAS REALIZADAS:\n");
+        Collections.sort(creditCard.getPurchases());
+
+        for (Purchase purchase : creditCard.getPurchases()) {
+            System.out.println(purchase.getDescription() + " - " +purchase.getValue());
+        }
+        System.out.println("\n***********************");
+
+        System.out.println("\nSaldo do cartão: " + creditCard.getBalance());
 
     }
 }
